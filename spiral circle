@@ -1,0 +1,22 @@
+#spiral circle using python
+import turtle
+import math
+bob = turtle.Turtle()
+bob.color('red' , 'cyan')
+bob.begin_fill()
+
+def polyline(t,n,angle,length):
+    for n in range(n):
+        t.fd(length)
+        t.lt(angle)
+
+def arc(t,r,angle):
+    arc_length = 2 * math.pi * r * angle / 360
+    n = int(arc_length/3)+1
+    length = arc_length / n
+    angle = float(angle)/n
+    polyline(t,n,angle,length)
+
+for r in range(5,150,2):
+   arc(bob,r,100)
+bob.end_fill
