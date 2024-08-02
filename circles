@@ -1,0 +1,20 @@
+#python code to draw circles with different radius from one point
+import turtle
+import math
+bob = turtle.Turtle()
+bob.color('brown')
+bob.begin_fill()
+def polygon(t,length,n):
+    ang = 360/n
+    for n in range(n):
+        t.fd(length)
+        t.lt(ang)
+
+def circle(t,r):
+    circum = 2* math.pi* r
+    n = int(circum / 3) + 3
+    length = circum / n
+    polygon(t,length,n)
+for f in range(30,50,3):
+    circle(bob,f)
+bob.end_fill()
